@@ -1,9 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".QuestionsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:fontFamily="@font/akaya_telivigala"
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:text="What country does this flag belong to?"
+            />
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/usa"
+            android:layout_marginTop="20dp"
+            />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+
+        />
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="301dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:max="9"
+            android:minHeight="50dp"
+            android:progress="0" />
+
+        <Button
+            android:fontFamily="@font/akaya_telivigala"
+
+            android:id="@+id/opt1"
+            android:layout_width="290dp"
+            android:layout_height="60dp"
+
+            android:background="@color/black"
+
+            android:layout_marginTop="16dp"
+            android:text="USA"
+            app:cornerRadius="10dp" />
+        <Button
+            android:fontFamily="@font/akaya_telivigala"
+            android:id="@+id/opt2"
+            android:layout_width="290dp"
+            android:layout_marginTop="16dp"
+
+            android:layout_height="60dp"
+            android:background="@color/black"
+
+            android:text="England"
+            app:cornerRadius="10dp" />
+        <Button
+            android:id="@+id/opt3"
+            android:fontFamily="@font/akaya_telivigala"
+            android:layout_width="290dp"
+            android:layout_height="60dp"
+            android:background="@color/black"
+
+            android:layout_marginTop="16dp"
+            android:text="Submit"
+            app:cornerRadius="10dp" />
+        <Button
+            android:id="@+id/opt4"
+            android:layout_width="290dp"
+            android:fontFamily="@font/akaya_telivigala"
+            android:layout_height="60dp"
+            android:background="@color/black"
+
+            android:layout_marginTop="16dp"
+            android:text="Submit"
+            app:cornerRadius="10dp" />
+        <Button
+            android:id="@+id/Submit"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:textSize="22dp"
+            android:textAllCaps="false"
+            android:background="@color/black"
+            android:layout_marginTop="36dp"
+            android:text="Submit"
+
+            app:cornerRadius="10dp" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>
