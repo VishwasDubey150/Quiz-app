@@ -2,6 +2,10 @@ package com.example.quiz
 
 object constants
 {
+    const val USER_NAME:String="user_name"
+    const val TOTAL_QUESTION:String="total_question"
+    const val CORRECT_ANSWER:String="correct_answer"
+
     fun getQuestions():ArrayList<Question>{
         val questionList=ArrayList<Question>()
 
@@ -92,7 +96,7 @@ object constants
             "Australia","China"
             ,1,
         )
-        questionList.add(que1)
+        questionList.add(que10)
 
 
         return questionList

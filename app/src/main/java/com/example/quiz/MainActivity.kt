@@ -10,9 +10,11 @@ import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         val button_start:Button=findViewById(R.id.button_start)
         var Entername:EditText=findViewById(R.id.Entername)
@@ -23,7 +25,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please Enter your name",Toast.LENGTH_SHORT).show()
             }
             else{
+                val name=Entername.text.toString()
                 val intent=Intent(this,QuestionsActivity::class.java)
+                intent.putExtra(constants.USER_NAME,name) //to send data in another activity
                 startActivity(intent)
                 finish()
 

@@ -25,10 +25,17 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {//to make t
     private var opt3: TextView? = null
     private var opt4: TextView? = null
     private var Submit: Button? = null
+    var mUsername: String? = null
+    var mCorrectanswer: Int =0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.questionsactivity)
+
+        mUsername=intent.getStringExtra(constants.USER_NAME)
+
+
         supportActionBar!!.hide()
 
         progressBar = findViewById<ProgressBar>(R.id.progressBar)
@@ -140,8 +147,14 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {//to make t
 
                         else ->
                         {
-                            val Intent=Intent(this,result_activity::class.java)
-                            startActivity(Intent)
+
+
+                            val intent=Intent(this,result_activity::class.java)
+                            intent.putExtra(constants.USER_NAME,mUsername)
+                            intent.putExtra(constants.CORRECT_ANSWER,mCorrectanswer)
+                            intent.putExtra(constants.TOTAL_QUESTION, mQuestionList!!.size)
+                            startActivity(intent)
+                            finish()
                         }
                     }
                 }
@@ -149,6 +162,10 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {//to make t
                     val question = mQuestionList?.get(mcurrentPosition - 1)
                     if (question!!.correctAnswer != mSelectedOptionPosition) {
                         answerView(mSelectedOptionPosition, R.drawable.wrongopt_bg)
+                    }
+                    else
+                    {
+                        mCorrectanswer++
                     }
                     answerView(question!!.correctAnswer, R.drawable.correctopt_bg)
 
