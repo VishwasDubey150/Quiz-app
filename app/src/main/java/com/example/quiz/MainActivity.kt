@@ -3,6 +3,7 @@ package com.example.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.system.Os.close
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
